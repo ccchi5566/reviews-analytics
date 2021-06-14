@@ -20,3 +20,12 @@ for d in data:
 		new.append(d) #小於100字的留言把它裝進new清單裡
 print('一共有', len(new), '筆留言長度小於100')
 print(new[0]) #隨便印一筆字數小於100的留言
+
+
+#篩選出含有good的留言數
+good = []
+for d in data:
+	if 'good' in d:
+	    good.append(d)
+print('一共有', len(good), '筆留言提到good')
+print(good[0]) #隨便印一筆提到good的
