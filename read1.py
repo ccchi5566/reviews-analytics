@@ -8,9 +8,33 @@ with open('amazon.txt', 'r') as f:
 			print(len(data))
 print('總共', len(data), '筆資料')
 
-print(data[0])
+
+sum_len = 0
+for d in data:
+	sum_len = sum_len + len(d)
+print('留言平均是', sum_len / len(data))
+
+#篩選小於100字的留言
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d) #小於100字的留言把它裝進new清單裡
+print('一共有', len(new), '筆留言長度小於100')
+print(new[0]) #隨便印一筆字數小於100的留言
 
 
+#篩選出含有good的留言數
+good = []
+for d in data:
+	if 'good' in d:
+	    good.append(d)
+print('一共有', len(good), '筆留言提到good')
+print(good[0]) #隨便印一筆提到good的
+
+
+
+
+# 一百萬筆留言中最常出現那些字，文字的記數
 wc = {} # word_count
 for d in data:
 	words = d.split(' ')
@@ -48,26 +72,5 @@ while True:
 
 
 
-# sum_len = 0
-# for d in data:
-# 	sum_len = sum_len + len(d)
-# print('留言平均是', sum_len / len(data))
-
-# #篩選小於100字的留言
-# new = []
-# for d in data:
-# 	if len(d) < 100:
-# 		new.append(d) #小於100字的留言把它裝進new清單裡
-# print('一共有', len(new), '筆留言長度小於100')
-# print(new[0]) #隨便印一筆字數小於100的留言
-
-
-# #篩選出含有good的留言數
-# good = []
-# for d in data:
-# 	if 'good' in d:
-# 	    good.append(d)
-# print('一共有', len(good), '筆留言提到good')
-# print(good[0]) #隨便印一筆提到good的
 
 
